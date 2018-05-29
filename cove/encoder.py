@@ -32,7 +32,7 @@ class MTLSTM(nn.Module):
             if vectors is not None:
                 self.vectors.weight.data = vectors
         self.rnn = nn.LSTM(300, 300, num_layers=2, bidirectional=True, batch_first=True)
-        self.rnn.load_state_dict(model_zoo.load_url(model_urls['wmt-lstm'], model_dir=model_cache))
+        self.rnn.load_state_dict(model_zoo.load_url(model_urls['wmt-lstm'], model_dir=model_cache, map_location='cpu'))
         self.residual_embeddings = residual_embeddings
 
     def forward(self, inputs, lengths, hidden=None):

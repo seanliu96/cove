@@ -1,1 +1,6 @@
 *.pyc
+.data
+.vector_cache
+.vscode
+cove.egg-info
+cove/.torch
